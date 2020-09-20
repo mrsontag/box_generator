@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-
+import DisplayBoxes from './components/displayboxes';
+import Input from './components/input';
 function App() {
+
+  const [boxList, setBoxList] = useState([]);
+  //const boxList = ["black","green","yellow"];
+  //setBoxList("black");
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input boxList={boxList} setBoxList={setBoxList}/>
+      <DisplayBoxes boxList={ boxList } />
     </div>
   );
 }
